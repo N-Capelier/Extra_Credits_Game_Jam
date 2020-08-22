@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Build
   m_EditorClassIdentifier: 
   scenesToBuild:
-  - sceneAsset: {fileID: 102900000, guid: 3ba78df03e8f0284da26905e0a0494d5, type: 3}
+  - sceneAsset: {fileID: 102900000, guid: 46fea69732589dc46b46b9e2fb38e11d, type: 3}
     enabled: 1
-  - sceneAsset: {fileID: 102900000, guid: e7ed155b4e5c0ab49a3831c98f58b2ba, type: 3}
+  - sceneAsset: {fileID: 102900000, guid: 6eb646b31d711344ab7356dd5a4a92c7, type: 3}
+    enabled: 1
+  - sceneAsset: {fileID: 102900000, guid: ca86666c8b7f7b146ab94355b63542fe, type: 3}
+    enabled: 1
+  - sceneAsset: {fileID: 102900000, guid: 7812f096325a8ca41830db92485dee93, type: 3}
     enabled: 1

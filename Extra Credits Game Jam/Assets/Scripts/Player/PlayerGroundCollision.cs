@@ -7,7 +7,7 @@ public class PlayerGroundCollision : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Solid"))
+        if(collision.CompareTag("Solid") || collision.CompareTag("Chest"))
         {
             PlayerManager.Instance.controller.groundCount++;
         }
@@ -15,7 +15,7 @@ public class PlayerGroundCollision : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Solid"))
+        if (collision.CompareTag("Solid") || collision.CompareTag("Chest"))
         {
             PlayerManager.Instance.controller.groundCount--;
         }

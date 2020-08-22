@@ -383,8 +383,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 5.141593
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -468,6 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 981148882040821773}
   moveSpeed: 5
-  jumpForce: 350
+  jumpForce: 2800
   groundCount: 0
   facingRight: 1
+  isJumping: 0

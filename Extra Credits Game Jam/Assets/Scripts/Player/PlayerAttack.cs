@@ -26,14 +26,14 @@ public class PlayerAttack : MonoBehaviour
             sprite.enabled = true;
         }
 
-        if(isAttacking && Time.time > time + attackDuration)
+        if(isAttacking && Time.time >= time + attackDuration)
         {
             isAttacking = false;
             capsuleCollider.enabled = false;
             sprite.enabled = false;
         }
 
-        if (!canAttack && Time.time > time + cooldownTime)
+        if (!canAttack && Time.time >= time + cooldownTime)
         {
             canAttack = true;
             capsuleCollider.enabled = false;

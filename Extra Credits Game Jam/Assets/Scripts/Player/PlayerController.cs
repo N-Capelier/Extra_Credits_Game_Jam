@@ -17,13 +17,16 @@ namespace Player
         [Range(0f, 20f)]
         [SerializeField] float moveSpeed = 5f;
 
-        [Range(0f, 1000f)]
+        [Range(0f, 10000f)]
         [SerializeField] float jumpForce = 200f;
 
         float horizontalMovement = 0f;
         [HideInInspector] public int groundCount = 0;
         [HideInInspector] public bool facingRight = true;
         Vector3 localScale;
+
+        [HideInInspector] public bool isJumping = false;
+        float jumpFrame = 0f;
 
         private void Start()
         {
@@ -33,10 +36,17 @@ namespace Player
 
         private void Update()
         {
+            if(isJumping && Time.time >= jumpFrame + 0.2f)
+            {
+                isJumping = false;
+            }
+
             horizontalMovement = CrossPlatformInputManager.GetAxis("Horizontal") * moveSpeed;
 
-            if (CrossPlatformInputManager.GetButtonDown("Jump") && groundCount > 0)
+            if (CrossPlatformInputManager.GetButton("Jump") && groundCount > 0 && !isJumping)
             {
+                isJumping = true;
+                jumpFrame = Time.time;
                 rb.AddForce(Vector2.up * jumpForce);
             }
 
