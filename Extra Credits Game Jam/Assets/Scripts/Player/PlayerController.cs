@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityStandardAssets.CrossPlatformInput;
@@ -21,7 +22,7 @@ namespace Player
 
         float horizontalMovement = 0f;
         [HideInInspector] public int groundCount = 0;
-        bool facingRight = true;
+        [HideInInspector] public bool facingRight = true;
         Vector3 localScale;
 
         private void Start()
@@ -75,20 +76,36 @@ namespace Player
 
         private void LateUpdate()
         {
-            if(horizontalMovement > 0f)
+            if (horizontalMovement > 0f)
             {
                 facingRight = true;
             }
-            else if(horizontalMovement < 0f)
+            else if (horizontalMovement < 0f)
             {
                 facingRight = false;
             }
 
-            if((facingRight && localScale.x < 0f) || (!facingRight && localScale.x > 0f))
+            if ((facingRight && localScale.x < 0f) || (!facingRight && localScale.x > 0f))
             {
                 localScale.x *= -1;
                 transform.localScale = localScale;
             }
         }
     }
+
+    public static class Controller
+    {
+        public static void ChangeGameObjectFacing(this Transform transform)
+        {
+            if (PlayerManager.Instance.controller.facingRight)
+            {
+                transform.localScale = Vector3.one;
+            }
+            else
+            {
+                transform.localScale = new Vector3(-1f, 1, 1);
+            }
+        }
+    }
+
 }
