@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+
+using UnityEditor;
 using UnityEngine;
 
 namespace UTPI.BuildPacks
@@ -49,3 +51,4 @@ namespace UTPI.BuildPacks
         }
     }
 }
+#endif

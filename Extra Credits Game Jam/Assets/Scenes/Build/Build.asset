@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748891c9ffd1c7e40805312822041397, type: 3}
-  m_Name: Game
+  m_Name: Build
   m_EditorClassIdentifier: 
   scenesToBuild:
   - sceneAsset: {fileID: 102900000, guid: 3ba78df03e8f0284da26905e0a0494d5, type: 3}
