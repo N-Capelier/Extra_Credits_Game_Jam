@@ -22,7 +22,7 @@ namespace Puzzle
             rb = GetComponent<Rigidbody2D>();
             if (!isVertical)
             {
-                rb.velocity = new Vector2(speed, 0);
+                rb.velocity = new Vector2(-speed, 0);
             }
             else
             {

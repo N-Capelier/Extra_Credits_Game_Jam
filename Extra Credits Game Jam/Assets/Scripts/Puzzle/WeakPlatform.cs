@@ -27,7 +27,7 @@ namespace Puzzle
         {
             if(weakening)
             {
-                strength -= Time.smoothDeltaTime;
+                strength -= Time.deltaTime;
                 if (strength <= 0)
                 {
                     platform.SetActive(false);
@@ -37,7 +37,7 @@ namespace Puzzle
 
             if(!platform.activeSelf)
             {
-                respawnTime -= Time.smoothDeltaTime;
+                respawnTime -= Time.deltaTime;
                 if(respawnTime <= 0)
                 {
                     strength = totalStrength;
