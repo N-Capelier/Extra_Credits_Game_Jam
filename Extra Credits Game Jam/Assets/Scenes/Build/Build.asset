@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenesToBuild:
   - sceneAsset: {fileID: 102900000, guid: 46fea69732589dc46b46b9e2fb38e11d, type: 3}
-    enabled: 1
-  - sceneAsset: {fileID: 102900000, guid: 6eb646b31d711344ab7356dd5a4a92c7, type: 3}
-    enabled: 1
+    enabled: 0
   - sceneAsset: {fileID: 102900000, guid: ca86666c8b7f7b146ab94355b63542fe, type: 3}
-    enabled: 1
+    enabled: 0
   - sceneAsset: {fileID: 102900000, guid: 7812f096325a8ca41830db92485dee93, type: 3}
+    enabled: 0
+  - sceneAsset: {fileID: 102900000, guid: 616d511f6a8f026458e911684b2a9fb9, type: 3}
     enabled: 1

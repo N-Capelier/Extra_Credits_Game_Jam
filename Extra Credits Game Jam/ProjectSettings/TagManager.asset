@@ -7,6 +7,8 @@ TagManager:
   - Solid
   - Enemy
   - Chest
+  - Moving Solid
+  - PlayerGroundCollider
   layers:
   - Default
   - TransparentFX

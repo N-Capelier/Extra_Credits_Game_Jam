@@ -17,7 +17,20 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if(CrossPlatformInputManager.GetButtonDown("Attack") && canAttack)
+        if(PlayerManager.Instance.controller.facingRight)
+        {
+            capsuleCollider.offset = new Vector2(0.8010503f, capsuleCollider.offset.y);
+            sprite.gameObject.transform.localPosition = new Vector3(0.672f, 0, 0);
+            sprite.flipX = false;
+        }
+        else
+        {
+            capsuleCollider.offset = new Vector2(-0.8010503f, capsuleCollider.offset.y);
+            sprite.gameObject.transform.localPosition = new Vector3(-0.672f, 0, 0);
+            sprite.flipX = true;
+        }
+
+        if (CrossPlatformInputManager.GetButtonDown("Attack") && canAttack)
         {
             canAttack = false;
             isAttacking = true;
@@ -36,13 +49,13 @@ public class PlayerAttack : MonoBehaviour
         if (!canAttack && Time.time >= time + cooldownTime)
         {
             canAttack = true;
-            capsuleCollider.enabled = false;
         }
     }
 
     private void LateUpdate()
     {
         transform.ChangeGameObjectFacing();
+        //sprite.gameObject.transform.ChangeGameObjectFacing();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
