@@ -20,7 +20,7 @@ namespace Player
         [Range(0f, 10000f)]
         [SerializeField] float jumpForce = 200f;
 
-        float horizontalMovement = 0f;
+        float horizontalMovementInput = 0f;
         [HideInInspector] public int groundCount = 0;
         [HideInInspector] public bool facingRight = true;
         Vector3 localScale;
@@ -41,7 +41,7 @@ namespace Player
                 isJumping = false;
             }
 
-            horizontalMovement = CrossPlatformInputManager.GetAxis("Horizontal") * moveSpeed;
+            horizontalMovementInput = CrossPlatformInputManager.GetAxis("Horizontal") * moveSpeed;
 
             if (CrossPlatformInputManager.GetButton("Jump") && groundCount > 0 && !isJumping)
             {
@@ -81,16 +81,19 @@ namespace Player
 
         private void FixedUpdate()
         {
-            rb.velocity = new Vector2(horizontalMovement, rb.velocity.y);
+            if(horizontalMovementInput != 0)
+            {
+                rb.velocity = new Vector2(horizontalMovementInput, rb.velocity.y);
+            }
         }
 
         private void LateUpdate()
         {
-            if (horizontalMovement > 0f)
+            if (horizontalMovementInput > 0f)
             {
                 facingRight = true;
             }
-            else if (horizontalMovement < 0f)
+            else if (horizontalMovementInput < 0f)
             {
                 facingRight = false;
             }
@@ -103,7 +106,7 @@ namespace Player
         }
     }
 
-    public static class Controller
+    public static class ControllerExtensions
     {
         public static void ChangeGameObjectFacing(this Transform transform)
         {
