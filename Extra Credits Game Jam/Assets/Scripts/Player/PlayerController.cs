@@ -85,6 +85,10 @@ namespace Player
             {
                 rb.velocity = new Vector2(horizontalMovementInput, rb.velocity.y);
             }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
         }
 
         private void LateUpdate()
