@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 1250898913836074896}
-  wayPointDistance: 10
+  wayPointDistance: 5
   speed: 4
 --- !u!1 &1413484046604574137
 GameObject:
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2100305924417507961}
   moveSpeed: 5
-  jumpForce: 6400
+  jumpForce: 6100
   groundCount: 0
   facingRight: 1
   isJumping: 0
